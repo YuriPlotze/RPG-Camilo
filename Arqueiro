@@ -1,0 +1,54 @@
+public class Arqueiro extends Personagem {
+    private int vida;
+    private int defesa;
+    private int dano; // ataque do personagem
+    private String Arma;
+
+    public Arqueiro (){
+        this.vida = 160;
+        this.defesa = 30;
+        this.dano = 20;
+    }
+    
+    public int getVida() {
+        return this.vida;
+    }
+
+    public void setVida(int vida) {
+    }
+
+    public int getDefesa() {
+        return this.defesa;
+    }
+
+    public void setDefesa(int defesa) {
+    }
+
+
+    public int getDano() {
+        return this.dano;
+    }
+
+    public void setDano(int dano) {
+    }
+    public String getArma() {
+        return Arma;
+    }
+
+    public void setArma(String arma) {
+
+        if(arma.toUpperCase().equals("ARCO LONGO")) {
+            this.Arma = "Arco longo";
+            this.dano+=12;
+            this.defesa+=13;
+        }
+            
+        else{
+            this.Arma = "Balestra";
+            this.dano+=15;
+            this.defesa+=10;
+        }
+          
+    }
+
+}
