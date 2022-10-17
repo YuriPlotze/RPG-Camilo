@@ -1,0 +1,89 @@
+import java.util.List;
+
+public abstract class Personagem {
+    
+    private String nome;
+    private String classe; 
+    private int numeroPersonagem;
+    private List<Personagem> ListaPersonagens;
+    private int vida;
+    public int getVida() {
+        return vida;
+    }
+
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+
+    private int defesa;
+    public int getDefesa() {
+        return defesa;
+    }
+
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+
+    private int dano;
+
+
+    public int getDano() {
+        return dano;
+    }
+
+
+    public void setDano(int dano) {
+        this.dano = dano;
+    }
+
+
+    public List<Personagem> getListaPersonagens() {
+        return ListaPersonagens;
+    }
+
+
+    public void setListaPersonagens(List<Personagem> listaPersonagens) {
+        this.ListaPersonagens = listaPersonagens;
+    }
+
+
+    public int getNumeroPersonagem() {
+        return numeroPersonagem;
+    }
+
+
+    public void setNumeroPersonagem(int numeroPersonagem) {
+        this.numeroPersonagem = numeroPersonagem;
+    }
+
+
+    public String getClasse() {
+        return classe;
+    }
+
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public Personagem(){
+        this.nome = "";
+
+    }
+
+}
