@@ -1,0 +1,39 @@
+public class Dragao extends Personagem {
+    private int vida;
+    private int defesa;
+    private int dano; // ataque do personagem
+    private String Arma;
+
+    public Dragao (){
+        this.vida = 300;
+        this.defesa = 30;
+        this.dano = 30;
+    }
+    
+    public int getVida() {
+        return this.vida;
+    }
+
+    public void setVida(int vida) {
+    }
+
+    public int getDefesa() {
+        return this.defesa;
+    }
+
+    public void setDefesa(int defesa) {
+    }
+
+
+    public int getDano() {
+        return this.dano;
+    }
+
+    public void setDano(int dano) {
+    }
+    public String getArma() {
+        return Arma;
+    }
+
+
+}
