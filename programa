@@ -1,0 +1,341 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class programa {
+
+	public static void main(String[] args) {
+		Scanner start = new Scanner(System.in);
+		Guerreiro classeGuerreiro = new Guerreiro();
+		Arqueiro classeArqueiro = new Arqueiro();
+		Mago classeMago = new Mago();
+		List <Personagem> listaAtual = new ArrayList<>();
+
+		System.out.println("Heroes of OOP");
+		System.out.println("Digite 1 para iniciar o jogo");
+		System.out.println("Digite 2 para sair do jogo"); 
+
+		int numPer = 0;
+		int valor = start.nextInt();
+		System.out.println("---------------------------");
+
+		//int start = selecao.verificainput();
+		if (valor == 2) {
+			System.exit(0);
+		}else{
+
+			
+
+			for (int i = 0; i < 9999; i++) {
+			System.out.println("Digite 1 para criar o personagem");
+			System.out.println("Digite 2 para iniciar o jogo");
+			System.out.println("Digite 3 para sair");
+			
+			int valor2 = start.nextInt();
+			System.out.println("---------------------------");
+
+
+			if (valor2 == 1){
+
+				if (numPer <3){
+					numPer++;
+					System.out.println("Qual classe?");
+					System.out.println("1-Guerreiro");
+					System.out.println("2-Mago");
+					System.out.println("3-Arqueiro");
+					int classe = start.nextInt();
+					System.out.println("---------------------------");
+
+					if (classe == 1){
+
+						Guerreiro novoGuerreiro = new Guerreiro();
+						System.out.println("Digite o nome do Gerreiro:");	
+						String nome = start.next();
+						System.out.println("---------------------------");
+						novoGuerreiro.setNome(nome);
+						System.out.println("Escolha a arma:");
+						System.out.println("Espada");
+						System.out.println("Machado");
+						String selecao = start.next();
+						System.out.println("---------------------------");
+
+						novoGuerreiro.setArma(selecao);
+						novoGuerreiro.setClasse("GUERREIRO");
+						novoGuerreiro.setNumeroPersonagem(numPer);
+						listaAtual.add(novoGuerreiro);
+                        classeGuerreiro.setListaPersonagens(listaAtual);
+						System.out.println("Personagem criado!");
+						
+		
+
+					}else if (classe == 2){
+						Mago novoMago = new Mago();
+						System.out.println("Digite o nome do Mago:");	
+						String nome = start.next();
+						System.out.println("---------------------------");
+
+						novoMago.setNome(nome);
+
+						System.out.println("Escolha a arma:");
+						System.out.println("Varinha");
+						System.out.println("Cajado");
+						String selecao = start.next();
+						System.out.println("---------------------------");
+
+						novoMago.setArma(selecao);
+						novoMago.setClasse("MAGO");
+						listaAtual.add(novoMago);
+						classeMago.setListaPersonagens(listaAtual);
+						System.out.println("Personagem criado!");
+
+					}else{
+						Arqueiro novoArqueiro = new Arqueiro();
+						System.out.println("Digite o nome do Arqueiro:");	
+						String nome = start.next();
+						novoArqueiro.setNome(nome);
+
+						System.out.println("Escolha a arma:");
+						System.out.println("Arco longo");
+						System.out.println("Balestra");
+						String selecao = start.next();
+						novoArqueiro.setArma(selecao);
+						novoArqueiro.setClasse("ARQUEIRO");
+						listaAtual.add(novoArqueiro);
+						classeArqueiro.setListaPersonagens(listaAtual);
+						System.out.println("Personagem criado!");
+
+					} 
+					
+				} else{
+					System.out.println("---------------------------");
+					System.out.println("Impossivel criar novo personagem");
+				}
+
+				
+				
+			}else if(valor2 == 2){
+				if (numPer == 0){
+					System.out.println("Por favor crie um personagem antes de iniciar");
+				}else{
+					break;
+				}
+
+
+
+			}else{
+				System.exit(0);
+
+			}
+			
+			System.out.println("---------------------------");
+
+		}
+
+		}
+		// System.out.println("Listando personagens");
+		// for (Personagem listaAtua:classeGuerreiro.getListaPersonagens())
+		// {
+		// 	System.out.println("Listar Guerreiros");
+		// 	if (listaAtua.getClasse().equals("GUERREIRO")){
+		// 	System.out.println("Nome:"+listaAtua.getNome());
+		// 	System.out.println("Posicao:"+listaAtua.getNumeroPersonagem());
+		// 	System.out.println("Vida"+ listaAtua.getVida());
+		// 	System.out.println("Def"+listaAtua.getDefesa());
+		// 	System.out.println("Atk"+listaAtua.getDano());
+		// 	}
+		// }
+	
+	
+		
+		String nomePer1 = "Guerreiro";
+		int vidaPer1 = 180;
+		int atkPer1 = 40;
+		int defPer1 = 35;
+		
+		String nomePer2 = "Mago";
+		int vidaPer2 = 200;
+		int atkPer2 = 36;
+		int defPer2 = 22;
+
+		String nomePer3 = "Arqueiro";
+		int vidaPer3 = 160;
+		int atkPer3 = 32;
+		int defPer3 = 43;
+
+
+		String dragao = "Dragao";
+		int dragVida = 300;
+		int dragAtaque = 30;
+		int dragDef =  30;
+
+		int defPer1Base = 35;
+		int defPer2Base = 22;
+		int defPer3Base = 43;
+
+		int danoRec1 = 0;
+		int danoRec2 = 0;
+		int danoRec3 = 0;
+		int danoRecD = 0;
+
+		for (int i = 0; i < 9999; i++){ // Loop
+				
+			if (vidaPer1 > 0 ){
+				System.out.println("Vez de "+ nomePer1); //Nome Personagem
+				System.out.println("1-Atacar");
+				System.out.println("2-Defender");
+				System.out.println("3-Desistir");
+				int acao = start.nextInt();
+				System.out.println("---------------------------");
+
+				if (acao == 1){
+					danoRecD = atkPer1 - dragDef;
+					if(danoRecD > 0){
+						dragVida -= danoRecD;
+					}
+
+					if (dragVida <= 0){
+					System.out.println("Dragao derrotado!");
+					System.exit(0);
+					}
+
+				}else if(acao == 2){
+					defPer1 = defPer1 + (defPer1 /100 * 10);
+
+				}else{
+					System.exit(0);
+				}
+			}
+
+			if (vidaPer2 > 0 ){
+				System.out.println("Vez de "+ nomePer2); //Nome Personagem
+				System.out.println("1-Atacar");
+				System.out.println("2-Defender");
+				System.out.println("3-Desistir");
+				int acao2 = start.nextInt();
+				System.out.println("---------------------------");
+
+				if (acao2 == 1){
+					danoRecD = atkPer2 - dragDef;
+					if(danoRecD > 0){
+						dragVida -= danoRecD;
+					if (dragVida <= 0){
+					System.out.println("Dragao derrotado!");
+					System.exit(0);
+					}
+
+				}else if(acao2 == 2){
+					defPer2 = defPer2 + (defPer2 /100 * 10);
+
+				}else{
+					System.exit(0);
+				}
+			
+			}
+
+			if (vidaPer3 > 0 ){
+				System.out.println("Vez de "+ nomePer3); //Nome Personagem
+				System.out.println("1-Atacar");
+				System.out.println("2-Defender");
+				System.out.println("3-Desistir");
+				int acao3 = start.nextInt();
+				System.out.println("---------------------------");
+
+				if (acao3 == 1){
+					danoRecD -= atkPer3 - dragDef;
+					if(danoRecD > 0){
+						dragVida -= danoRecD;
+					}
+					if (dragVida <= 0){
+					System.out.println("Dragao derrotado!");
+					System.exit(0);
+					}
+
+				}else if(acao3 == 2){
+					defPer3 = defPer3 + (defPer1 /100 * 10);
+
+				}else{
+					System.exit(0);
+				}
+			}
+
+			Random generator = new Random();
+				
+			int dragTurno = generator.nextInt(3)+1; 
+				if (dragTurno == 1 && vidaPer1 <= 0){
+					dragTurno = 2;
+					if (dragTurno == 2 && vidaPer2 <= 0){
+						dragTurno =3;
+						if (dragTurno == 3 && vidaPer3 <=0){
+							System.out.println("Fim de jogo");
+							System.exit(0);
+						}
+					}
+				}else if (dragTurno == 2 && vidaPer2 <= 0){
+					dragTurno = 3;
+					if (dragTurno == 3 && vidaPer3 <= 0){
+						dragTurno =1;
+						if (dragTurno == 1 && vidaPer1 <=0){
+							System.out.println("Fim de jogo");
+							System.exit(0);
+						}
+					}
+				}else if (dragTurno == 3 && vidaPer3 <= 0){
+					dragTurno = 1;
+					if (dragTurno == 1 && vidaPer1 <= 0){
+						dragTurno =2;
+						if (dragTurno == 2 && vidaPer2 <=0){
+							System.out.println("Fim de jogo");
+							System.exit(0);
+						}
+					}
+				}
+
+				if (dragTurno == 1){
+					System.out.println("O dragao atacou " + nomePer1);
+					danoRec1 = dragAtaque - defPer1;
+					if(danoRec1 > 0){
+						vidaPer1 -= danoRec1;
+					}
+					System.out.println("Vida atual: " + vidaPer1);
+					if (vidaPer1 <= 0){
+						System.out.println("personagem morto");
+					}
+				}else if (dragTurno == 2){
+					System.out.println("O dragao atacou " + nomePer2);
+					danoRec2 = dragAtaque - defPer2;
+					if(danoRec2 > 0){
+						vidaPer2 -= danoRec2;
+					}
+					System.out.println("Vida atual: " +vidaPer2);
+					if (vidaPer2 <= 0){
+						System.out.println("personagem morto");
+					}
+				}else{
+					System.out.println("O dragao atacou " + nomePer3);
+					danoRec3 = dragAtaque - defPer3;
+					if(danoRec3 > 0){
+						vidaPer3 -= danoRec3;
+					}
+					System.out.println("Vida atual: " + vidaPer3);
+					if (vidaPer3 <= 0){
+						System.out.println("personagem morto");
+					}
+				}
+				
+				defPer1 = defPer1Base;
+				defPer2 = defPer2Base;
+				defPer3 = defPer3Base;
+				System.out.println("---------------------------");
+				//Criar um if para verificar se o HP dos personagens forem 0
+
+				//Criar um if para verificar se o HP do dragao é 0
+		
+		}
+	}
+
+
+}
+}
