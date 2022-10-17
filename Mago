@@ -1,0 +1,54 @@
+public class Mago extends Personagem {
+    private int vida;
+    private int defesa;
+    private int dano; // ataque do personagem
+    private String Arma;
+
+    public Mago (){
+        this.vida = 200;
+        this.defesa = 10;
+        this.dano = 20;
+    }
+
+    public int getVida() {
+        return this.vida;
+    }
+
+    public void setVida(int vida) {
+    }
+
+    public int getDefesa() {
+        return this.defesa;
+    }
+
+    public void setDefesa(int defesa) {
+    }
+
+
+    public int getDano() {
+        return this.dano;
+    }
+
+    public void setDano(int dano) {
+    }
+    public String getArma() {
+        return Arma;
+    }
+
+    public void setArma(String arma) {
+
+        if(arma.toUpperCase().equals("VARINHA")) {
+            this.Arma = "Varinha";
+            this.dano+=16;
+            this.defesa+=9;
+        }
+            
+        else{
+            this.Arma = "Cajado";
+            this.dano+=13;
+            this.defesa+=12;
+        }
+          
+    }
+
+}
